@@ -1,0 +1,9 @@
+Programa 2. (5 puntos) Realiza un programa en java que imprima los primeros 15 elementos de alguna de las siguientes series haciendo uso necesariamente de las sentencias de control:
+
+Serie de números impares positivos
+1, 3, 5, 7, 9, 11, 13, 15, 17, .... así sucesivamente.
+
+Serie de Fibonacci
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... así sucesivamente.
+
+Toma captura de pantalla del código completo y del programa compilado.

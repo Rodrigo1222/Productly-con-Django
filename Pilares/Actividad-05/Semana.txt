@@ -1,0 +1,12 @@
+Programa 1. (3 puntos) Crea el código en Java bajo las siguientes instrucciones:
+
+Importa la clase Scanner para la lectura de datos.
+
+Crea un objeto semana de la clase Scanner.
+
+Crea una variable dia de tipo entero.
+Imprime el texto Introduce un número del 1 al 7 para conocer el día de la semana, para hacer la lectura de el dato desde teclado y almacenarlo en la variable dia.
+Crea una estructura switch-case, donde la variable a comparar con todos los casos es dia.
+En cada caso, coloca e imprime cada día de la semana (comenzando el Lunes).
+Si se ingresa un número de día no válido, imprime el mensaje Número no válido.
+Toma captura de pantalla del código completo y del programa compilado.
