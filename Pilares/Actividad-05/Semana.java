@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Escaner {
+public class Semana {
 
     public static void main(String[] args) {
         int dia=0;
