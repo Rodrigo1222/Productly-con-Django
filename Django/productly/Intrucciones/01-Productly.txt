@@ -1,0 +1,60 @@
+Para iniciar hay que instalar django
+
+django-admin startproject productly .
+    para crear un muevo proyecto 
+    "productly" es el nombre del proyecto
+    siempre debes de terminar con un punto para que el proyecto se cree en la carpeta en la que estamos
+
+$ python manage.py runserver 
+    para ver la ruta donde se va a montar nuestro proyecto 
+
+$ python manage.py startapp productos
+    "productos" es el nombre de nuestra app
+    Para crear la carpeta de nuestra aplicación y la estructura de archivos
+    Despuesse tienen quen configurar las URLs
+
+ir a /productos/apps.py
+    copiar el nombre de la clase, en este caso es ProductosConfig
+
+ir a /productly/settings
+    en la linea 34 aprox veremos las aplicaciones que tenemos 
+    el admin nos ayuda a gestinar los datos dentro de nuestra base de datos
+    auth para iniciar sesion gestionar 
+
+instalaremos la aplicacion de este modo 'productos.apps.ProductosConfig',
+    ".apps" haciendo referencia de alchivo donde esta nuestr app
+    inmediatamente despues pegamos el nombre de nuestra app ProductosConfig',
+    seguido de una coma
+
+Lo siguiente es especificar las rutas URLs
+    ir a /productly/urls 
+    y crear la ruta que referencia a nuestra app path("productos/",)
+
+En el mismo archivo de urls es necesario importar include dentro del paquete de django.urls
+    para eso hay que " from django.urls import path, include "
+    include(" ") recibe un string de donde se encuentran instasladas las URLs que se importaran
+    - path("productos/", include("productos.urls")) 
+    productos.urls es el nombre de la app que nosotros creamos no se pone .py
+
+Despues es necesario crear el archivo urls.py dentro de la carpeta productos
+    
+    importaremos from django.urls import path
+    luego importaremos from . import views para importar el archivo views.py
+    dentro de este archivo crearemos una variable llamada "urlpatterns"
+    urlpatterns =[] a un listado 
+     path("", ) se deja el primer string vacio para que /productos sea  el urls padre
+     esto es para que ejecute la funsion por crear
+     si a  path("marte", ) el path sera /productos/marte
+    path("", views.index, name="index" )
+
+Despues tenemos que crear nuestra vista en /productos/views.py
+   Primero importar
+        import django.shortcuts import render
+        import django.https import httpResponse
+    def index( )
+    todas las views reciben el mismo parametro "request"
+    def index(request):
+    nos brindara una respuesta, en este caso:
+          return HTTpResponse("Hola mundo")
+
+provamos que este todo correcto en la terminal = python manage.oy runserver

@@ -1,0 +1,12 @@
+La migracion se hace con el objetivo para que nuestra base de datos este conciente de todos los modelos
+es un paso a paso de lo que se tiene quye hacer paras que se actualice la base de datos 
+
+Paso a paso
+    nuevos campos
+    nuevas tablas
+    Fechas distinistas
+
+usa el codigo $ python manage.py makemigrations en la terminal y se crearan de forma automatica
+
+una vez hecho lo anterior usa el comando 
+    $ python manage.py migrate 

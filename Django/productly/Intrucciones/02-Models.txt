@@ -1,0 +1,30 @@
+vamos a /productos/models.py
+
+ahi vamos a crear una clase 
+Llamada en este caso categoria que extendera los modelos de django
+    class Categoria(models.Model):
+dentro de la clase vamos a crear nuestro primero objeto 
+    CharField es el nombre que tiene una cadena de texto pero limitada
+    nombre = models.CharField(max_length=255) 
+
+vamos a crear una segunda clase llamada producto 
+    class producto(models.Model): que tambien extendera los modelos de django
+    y crearemos sus campos:
+
+    nombre = models.CharField(max_length=255) 
+    stock  = models.IntegerField() para enteros
+    puntaje = models.FloatField() para flotantes
+
+    Para que la clase categoria y la clase productos se relacionen es necesario 
+    crear dentro de la clase producto una campo de ForeignKey 
+        Categoria = models.ForeignKey(Categoria, on_delete=) 
+    lo primero es especificar a que se vinculara, en este caso es (Categoria, )
+    lo segundo es mandatorio siempre es necesario especificar que pasara 
+    con los tados si eliminamos una categoria
+CASCADE: elimina los productos
+PROTECT lanza un error
+RESTRICT solo eliminara la categoria si no hay productos
+SET_NULL actualiza a valor nulo
+SET_DEFAULT asigna valor por defecto 
+     en este caso usaremos 
+     
