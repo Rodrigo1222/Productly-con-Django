@@ -1,0 +1,12 @@
+Paras actualizar nuestros modelos es necesario ir a 
+/productos/models.py
+
+importar from django.utils. import time zone
+
+Una vez en el archivo es necesario ir al final del codigo y agregar
+    creado_en = models.DateTimeField() para guardar un regisstro de cuando fue creado este modelo
+
+    se quedara de forma habilitada pra que se ejecute de forma automatica va 
+    da que hagamos una mofificacion 
+
+    creado_en = models.DateTimeField(default= timezone.now )
