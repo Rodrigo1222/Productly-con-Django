@@ -1,0 +1,29 @@
+
+
+
+Crearemos un administrador para el servidosr de django
+
+vamos a la terminal y ejecutamos $ python manage.py createsuperuser
+nos especificara crear un numbre de usuario
+un correo
+una contraseña
+
+ahora vas /productos/admin.py
+y registraras los modelos en el archivo de admin.py
+
+en este caso son los modelos de from .models import Categoria, Producto
+
+y ahora creamos el metodo para llamar los modelos que queremos que aparezcan en la pagina de admin 
+admin.site.register(Categoria)
+admin.site.register(Producto)
+
+
+
+
+luego ejecutas  python manage.py runserver
+e ingresamos a la ruta 
+una vez en la ruta ingresaremos a admin 
+
+en admin ingresas nombre y contraseña 
+
+ahora rt

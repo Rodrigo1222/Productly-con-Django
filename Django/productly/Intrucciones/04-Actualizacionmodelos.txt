@@ -10,3 +10,6 @@ Una vez en el archivo es necesario ir al final del codigo y agregar
     da que hagamos una mofificacion 
 
     creado_en = models.DateTimeField(default= timezone.now )
+
+y agregamos en la terminal python manage.py makemigrations
+luego python  manage.py migrate
