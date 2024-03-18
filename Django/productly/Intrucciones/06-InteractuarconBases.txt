@@ -1,0 +1,44 @@
+esto solo si necesitas hacerlo rapido si no, es necesario trabajar con plantillas
+
+Ahora ya tenemos nuestros modelos que cuentan con atributos y metodos.
+los cuales nos permitiranb interactuar con la base de datos sin neceszitdad de SQL
+
+solo para consultas simples
+
+/Productos/view.py
+
+luego importaremos 
+
+from .models import Producto
+despues vamos a incluir Jsonresponse justo despues del import de HttpResponse
+
+luego damos a modificar el objto index por alguna de estas lineas de codigo dependiendo de nuestra
+busqueda.
+def index(request):
+
+    ejemplos    
+        Productos = Producto.objects.all() buscar todo
+        Productos = Producto.objects.filter(puntaje=3) filtrar
+        Productos = Producto.objects.get() si solo buscamos uno 
+
+def index(request):
+    Productos = Producto.objects.all().values()
+        return Jsonresponse(list(Productos), safe= False)
+
+
+Para trabajar con plantillas 
+dentro de /Productos/view.py vamos a llamar a return
+    
+def index(request):
+    Productos = Producto.objects.all()
+
+    return render( 
+        request,  --El nombre de nuestro objeto request
+        "index.html", --el nombre de nuestra plantilla
+        context={"productos": Productos}  -- el nombre de la propiedad y luego el valor de los objetos a listar
+    )
+
+Para crear la plantilla en /productos
+vamos a crear una carpeta llamada templates es necesario que tenga ese nombre
+creamos un arcchivo con el nombre de la plantilla index.html
+

@@ -17,13 +17,33 @@ y ahora creamos el metodo para llamar los modelos que queremos que aparezcan en 
 admin.site.register(Categoria)
 admin.site.register(Producto)
 
-
-
-
 luego ejecutas  python manage.py runserver
 e ingresamos a la ruta 
 una vez en la ruta ingresaremos a admin 
 
 en admin ingresas nombre y contraseña 
 
-ahora rt
+
+para que el nombre de nuestro modelo se refleje en la interfaz de usuario es necesario 
+modificar /poductos/models
+
+Para nosotros personalizar lo que se muestra enb el panel de control es necesario 
+ir a /produtos/admin para crear una nueva clase qwue represente lo que queremos mostrar
+y ocultar
+    vamos a creare una clase 
+     class CategoriaAdmin(admin.ModelAdmin):
+        list_display = ("id", "nombre") estos son dos ejemplos de atributos 
+
+despues es tomar el nombre de la clase en este caso CategoriaAdmin y agregarlo al metodo 
+    admin.site.register(Categoria, CategoriaAdmin) como segundo argumento
+
+para que se visuelice el nombre de los producxtos y categorias en nuestro menu de admin 
+es necesario agregar el metodo str a nuestros modelos de producto y cadegoria en /productos/modelos.py
+
+justo abajo de lo que esta dentrto de las clases 
+    def __str__(self):
+        return self.nombre
+
+Para que la fecha se asigne de manera automatica vamos a /productos/admin.py
+y en la clase de ProductosAdmin vamos a agregar 
+    exclude = ("creado_en", )
