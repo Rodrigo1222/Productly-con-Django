@@ -1,0 +1,26 @@
+Para que la plantilla base nos funcione para todo nuestro proyecto incluyendo cada una de las apps
+que tenga este, es necesario crearen en /Productly la carpeta raiz una carpeta llamada tambien tamplates
+pere es necesario ir a los settings de el proyecto en Michosoft es ctrol+ p y aprox en la linea 59 
+esta esta parte del codigo.
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+justo en el apartado "DIRS" con la ayuda de "os" vamos a crear una ruta para la carpeta que acabamos de crear
+        
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
+
+con esto quedara referenciada nuestra nueva carpeta y todos las apps que creemos podran tener la misma referencia
+recuerda importar os

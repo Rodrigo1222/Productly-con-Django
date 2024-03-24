@@ -1,4 +1,9 @@
-<hi>Productos</hi>
+{% extends 'base.html' %}
+
+{% block content %}
+
+    
+<h1>Productos</h1>
 
 <table class="table">
     <thead>
@@ -9,14 +14,16 @@
             <th>Categoria</th>
         </tr>
     </thead>
-   
-    {%for producto in productos%}
     <tbody>
+    {% for producto in productos %}
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.stock }}</td>
+            <td>{{ producto.puntaje }}</td>
+            <td>{{ producto.categoria }}</td>
         </tr>
+        {% endfor %}
     </tbody>
 </table>
+
+{% endblock %}

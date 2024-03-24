@@ -41,4 +41,32 @@ def index(request):
 Para crear la plantilla en /productos
 vamos a crear una carpeta llamada templates es necesario que tenga ese nombre
 creamos un arcchivo con el nombre de la plantilla index.html
+dentro del archivo se le dara formato a una tabla 
+
+ejemplo 
+
+<hi>Productos</hi>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Stock</th>
+            <th>Puntaje</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for producto in productos %} Este ciclo for nos ayuda a iterar cada uno de nuestros producto
+        <tr>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.stock }}</td>
+            <td>{{ producto.puntaje }}</td>
+            <td>{{ producto.categoria }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
 
