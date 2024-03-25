@@ -1,0 +1,61 @@
+para agregar una pagina que nos de los detalles del producto es necesario agrega /Productly/producto/urls.proyecto.py
+una nueva ruta 
+  path("<int:producto_id>", views.detalle, name="producto_detalle" )
+
+Luego en views.py se def una funsion llamada detalle
+
+def detalle(request, producto_id):
+    producto = get_object_or_404(Producto, id=producto_id )
+    return render(request, "detalle.html", context={"producto": producto} )
+
+despues vamos a dar formato a nuestra pagina detalle 
+createmos un archivo dentro de /prroductos/template un archivo llamado detalle .html
+dentro agregaremos esta configuracion basica 
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <H6>{{ producto.nombre }}</H6>
+    <p>{{ producto.categoria }}</p>
+    <p>{{ producto.stock }}</p>
+    <p>{{ producto.puntaje }}</p>
+    <p>{{ producto.creado_en }}</p>
+</div>
+{% endblock %}
+
+Para que el nombre de los poroductos nos envien a la pagina de dtalles con solo darrle click
+es necesario ir a index y en donde estan producto.nombre agregar haciendo referenciaz a producto detalle
+
+            <td>
+                <a href="{% url 'producto_detalle' producto.id %}">
+                {{ producto.nombre }}
+                </a>
+            </td>
+   
+<h1>Productos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Stock</th>
+            <th>Puntaje</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for producto in productos %}
+        <tr>
+            <td>
+                <a href="{% url 'producto_detalle' producto.id %}">
+                {{ producto.nombre }}
+                </a>
+            </td>
+            <td>{{ producto.stock }}</td>
+            <td>{{ producto.puntaje }}</td>
+            <td>{{ producto.categoria }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
