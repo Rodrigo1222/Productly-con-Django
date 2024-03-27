@@ -1,7 +1,0 @@
-Programa 2. (2 puntos) Crea un programa llamado Char.java que contenga lo siguiente:
-
-Escribe como comentario de una sola línea tu nombre.
-Crea una variable llamada primerLetra de tipo char y almacena ahí la primera letra de tu nombre.
-Imprime en la terminal el valor de la variable primerLetra.
-Escribe la salida.
-Toma captura de pantalla del código completo y del programa compilado.
