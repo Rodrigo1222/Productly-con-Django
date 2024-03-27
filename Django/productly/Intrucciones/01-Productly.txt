@@ -11,7 +11,7 @@ $ python manage.py runserver
 $ python manage.py startapp productos
     "productos" es el nombre de nuestra app
     Para crear la carpeta de nuestra aplicación y la estructura de archivos
-    Despuesse tienen quen configurar las URLs
+    después se tienen que configurar las URLs
 
 ir a /productos/apps.py
     copiar el nombre de la clase, en este caso es ProductosConfig
@@ -21,9 +21,9 @@ ir a /productly/settings
     el admin nos ayuda a gestinar los datos dentro de nuestra base de datos
     auth para iniciar sesion gestionar 
 
-instalaremos la aplicacion de este modo 'productos.apps.ProductosConfig',
-    ".apps" haciendo referencia de alchivo donde esta nuestr app
-    inmediatamente despues pegamos el nombre de nuestra app ProductosConfig',
+instalaremos la aplicación de este modo 'productos.apps.ProductosConfig',
+    ".apps" haciendo referencia de archivo donde esta nuestro app
+    inmediatamente después pegamos el nombre de nuestra app ProductosConfig',
     seguido de una coma
 
 Lo siguiente es especificar las rutas URLs
@@ -36,7 +36,7 @@ En el mismo archivo de urls es necesario importar include dentro del paquete de 
     - path("productos/", include("productos.urls")) 
     productos.urls es el nombre de la app que nosotros creamos no se pone .py
 
-Despues es necesario crear el archivo urls.py dentro de la carpeta productos
+Después es necesario crear el archivo urls.py dentro de la carpeta productos
     
     importaremos from django.urls import path
     luego importaremos from . import views para importar el archivo views.py
@@ -47,7 +47,7 @@ Despues es necesario crear el archivo urls.py dentro de la carpeta productos
      si a  path("marte", ) el path sera /productos/marte
     path("", views.index, name="index" )
 
-Despues tenemos que crear nuestra vista en /productos/views.py
+después tenemos que crear nuestra vista en /productos/views.py
    Primero importar
         import django.shortcuts import render
         import django.https import httpResponse
@@ -57,4 +57,4 @@ Despues tenemos que crear nuestra vista en /productos/views.py
     nos brindara una respuesta, en este caso:
           return HTTpResponse("Hola mundo")
 
-provamos que este todo correcto en la terminal = python manage.oy runserver
+Probamos que este todo correcto en la terminal = python manage.oy runserver
