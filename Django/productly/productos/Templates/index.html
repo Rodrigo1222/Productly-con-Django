@@ -5,6 +5,7 @@
     
 <h1>Productos</h1>
 
+<a href=" {% url "productos:formulario" %} "> Nuevo productto </a>
 <table class="table">
     <thead>
         <tr>
@@ -18,7 +19,7 @@
     {% for producto in productos %}
         <tr>
             <td>
-                <a href="{% url 'productos: detalle' producto.id %}">
+                <a href="{% url 'productos:detalle' producto.id %}">
                 {{ producto.nombre }}
                 </a>
             </td>
