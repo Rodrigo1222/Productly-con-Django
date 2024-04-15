@@ -1,14 +1,31 @@
-asgiref==3.7.2
+<<<<<<< HEAD
+asgiref==3.8.1
 astroid==3.1.0
 colorama==0.4.6
 dill==0.3.8
-Django==5.0.3
+Django==4.1.7
 isort==5.13.2
 mccabe==0.7.0
-platformdirs==4.2.0
+platformdirs==3.1.1
 pylint==3.1.0
 pylint-django==2.5.5
 pylint-plugin-utils==0.8.2
-sqlparse==0.4.4
+sqlparse==0.5.0
 tomlkit==0.12.4
 tzdata==2024.1
+=======
+asgiref==3.8.1
+astroid==3.1.0
+colorama==0.4.6
+dill==0.3.8
+Django==4.1.7
+isort==5.13.2
+mccabe==0.7.0
+platformdirs==3.1.1
+pylint==3.1.0
+pylint-django==2.5.5
+pylint-plugin-utils==0.8.2
+sqlparse==0.5.0
+tomlkit==0.12.4
+tzdata==2024.1
+>>>>>>> b7cb822dfda0ffac4f10db6cf43110db479e69b3

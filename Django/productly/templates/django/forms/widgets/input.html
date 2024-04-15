@@ -1,8 +1,18 @@
+<<<<<<< HEAD
 <input
-    class="form-control {{ widget.attrs.class}}"
+    class="form-control{{ widget.attrs.class}}"
     type="{{ widget.type }}" 
     name="{{ widget.name }}"
     {% if widget.value != None %} 
         value="{{ widget.value|stringformat:'s' }}"
     {% endif %}
+=======
+<input
+    class="form-control{{ widget.attrs.class}}"
+    type="{{ widget.type }}" 
+    name="{{ widget.name }}"
+    {% if widget.value != None %} 
+        value="{{ widget.value|stringformat:'s' }}"
+    {% endif %}
+>>>>>>> b7cb822dfda0ffac4f10db6cf43110db479e69b3
     {% include "django/forms/widgets/attrs.html" %}>

@@ -1,0 +1,36 @@
+<<<<<<< HEAD
+{% load add_attr %}
+
+{% for field in form %}
+<div class="mb-3">
+    {{ field.label_tag }} 
+    {% if field.errors %}
+        {{ field|add_attr:"class: is-invalid" }}
+    {% else %}
+        {{ field }}
+    {% endif %}
+    <div class="invalid-feedback">
+    {% for error in field.errors %}
+        {{ error }}
+    {% endfor %}
+    </div>
+</div>
+=======
+{% load add_attr %}
+
+{% for field in form %}
+<div class="mb-3">
+    {{ field.label_tag }} 
+    {% if field.errors %}
+        {{field|add_attr:"class:is-invalid"}}
+    {% else %}
+        {{ field }}
+    {% endif %}
+    <div class="invalid-feedback">
+    {% for error in field.errors %}
+        {{ error }}
+    {% endfor %}
+    </div>
+</div>
+>>>>>>> b7cb822dfda0ffac4f10db6cf43110db479e69b3
+{% endfor %}

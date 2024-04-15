@@ -1,34 +1,68 @@
-{% extends 'base.html' %}
+<<<<<<< HEAD:productos/Templates/index.html
+{% extends "base.html" %}
 
 {% block content %}
-
-    
 <h1>Productos</h1>
+<a href="{% url "productos:formulario" %}">
+    Nuevo producto.
+</a>
 
-<a href=" {% url "productos:formulario" %} "> Nuevo productto </a>
 <table class="table">
-    <thead>
+    <head>
         <tr>
             <th>Nombre</th>
             <th>Stock</th>
             <th>Puntaje</th>
             <th>Categoria</th>
         </tr>
-    </thead>
-    <tbody>
+    </head>
     {% for producto in productos %}
+    <tbody>
         <tr>
             <td>
                 <a href="{% url 'productos:detalle' producto.id %}">
-                {{ producto.nombre }}
+                    {{ producto.nombre }}
                 </a>
             </td>
             <td>{{ producto.stock }}</td>
             <td>{{ producto.puntaje }}</td>
             <td>{{ producto.categoria }}</td>
         </tr>
-        {% endfor %}
+    {% endfor %}
     </tbody>
 </table>
+=======
+{% extends "base.html" %}
 
-{% endblock %}
+{% block content %}
+<h1>Productos</h1>
+<a href="{% url "productos:formulario" %}">
+    Nuevo producto.
+</a>
+
+<table class="table">
+    <head>
+        <tr>
+            <th>Nombre</th>
+            <th>Stock</th>
+            <th>Puntaje</th>
+            <th>Categoria</th>
+        </tr>
+    </head>
+    {% for producto in productos %}
+    <tbody>
+        <tr>
+            <td>
+                <a href="{% url 'productos:detalle' producto.id %}">
+                    {{ producto.nombre }}
+                </a>
+            </td>
+            <td>{{ producto.stock }}</td>
+            <td>{{ producto.puntaje }}</td>
+            <td>{{ producto.categoria }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+>>>>>>> b7cb822dfda0ffac4f10db6cf43110db479e69b3:productos/templates/index.html
+{% endblock  %}
